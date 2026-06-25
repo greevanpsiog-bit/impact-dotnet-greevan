@@ -9,13 +9,13 @@
 ## Evidence
 
 Task 1.1 
-![Document](Assets\Screenshots\Task1.1.png)
+![Task 1.1 Screenshot](Assets/Screenshots/Task1.1.png)
 
 Task 1.2
-![Document](Assets\Screenshots\Task1.2.png)
+![Task 1.2 Screenshot](Assets/Screenshots/Task1.2.png)
 
 Task 1.3
-![Document](Assets\Screenshots\Task1.3.png)
+![Task 1.3 Screenshot](Assets/Screenshots/Task1.3.png)
 
 Task 1.4
-![Document](Assets\Screenshots\Task1.4.png)
+![Task 1.4 Screenshot](Assets/Screenshots/Task1.4.png)
