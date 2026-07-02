@@ -74,6 +74,9 @@ Task 1.16
 [Q1](/Assets/Screenshots/Week1/Q1/q1.png)
 
 ## Mini Q2
-[Q2]()
+[Q2](/Assets/Screenshots/Week1/Q2/q2.png)
+
+## Mini Q3
+[Q3](/Assets/Screenshots/Week1/Q3/q3.png)
 
 
