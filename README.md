@@ -36,4 +36,29 @@ Task 1.5
 ![Task 1.5](/Assets/Screenshots/Task1.5.png)
 
 Task 1.6
-![Task 1.6]
+![Task 1.6](/Assets/Screenshots/Task1.6.1.png)
+
+Task 1.8
+![Task 1.8](/Assets/Screenshots/Task1.8.png)
+
+# Day 3: Enums, Nullable, conversion, Memory model
+
+Task 1.10
+![Task1.8](/Assets/Screenshots/Task1.10.png)
+
+Task 1.11
+![Task1.11](/Assets/Screenshots/Task1.11.png)
+
+Task 1.12
+![Task1.12](/Assets/Screenshots/Task1.12.png)
+
+# Day 4 — Modern Syntax + Class Anatomy
+
+Task 1.13
+![Task1.13](/Assets/Screenshots/Task1.14.png)
+
+Task 1.14
+![Task1.14]()
+
+
+
