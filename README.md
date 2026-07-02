@@ -64,4 +64,10 @@ Task 1.15
 ![Task1.15](/Assets/Screenshots/Task1.15.png)
 
 
+Task 1.16
+![Task1.16](/Assets/Screenshots/Task1.16.png)
+
+# Day 5 — Partial, Access, Strings, Records, Indexers + Mini-Projects
+
+
 
