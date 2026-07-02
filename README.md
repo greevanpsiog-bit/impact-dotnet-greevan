@@ -60,3 +60,8 @@ Task 1.13
 Task 1.14
 ![Task1.14](/Assets/Screenshots/Task1.14-tuples&deconstruction.png)
 
+Task 1.15
+![Task1.15](/Assets/Screenshots/Task1.15.png)
+
+
+
