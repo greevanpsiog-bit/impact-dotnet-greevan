@@ -1,5 +1,10 @@
 # WEEK 1 — Environment + C# Language & Object Foundations
 
+**Name:** Dhasagreevan Chandrasekar  
+**Employee ID:** P461 
+**Cohort:** Batch 01  
+**Title:** Week 2 — OOP, Delegates, Events, Generics & LINQ
+
 **Phase 0 + Modules 1–2 · 15 hrs**
 
 ### 🎯 Objective

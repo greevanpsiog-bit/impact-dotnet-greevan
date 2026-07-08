@@ -1,6 +1,11 @@
 # WEEK 2 — OOP, Delegates, Events, Generics & LINQ
 
-**Modules 3–5 · 15 hrs**
+**Modules 3–5 · 15 hrs** 
+
+**Name:** Dhasagreevan Chandrasekar  
+**Employee ID:** P461
+**Cohort:** Batch 01  
+**Title:** Week 2 — OOP, Delegates, Events, Generics & LINQ
 
 ### 🎯 Objective
 Model a domain with proper OOP and query collections fluently — the two skills the Web API leans on hardest.
