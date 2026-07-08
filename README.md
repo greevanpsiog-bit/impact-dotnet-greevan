@@ -65,7 +65,7 @@ The full C# language surface: types and how they live in memory, the conversion 
 | 📝 Learning Notes & "Done When" Criteria | 📸 Evidence |
 |---|---|
 | **Task 1.17: Core C# Features**<br>• Partial classes/methods, access-modifier matrix.<br>• `Address` record (`==` equality, `with` mutation).<br>• `Playlist` indexers (bounds checking + string indexer).<br>• **Done when:** Record prints `True` for equality; `with` creates changed copy. | **Task 1.17**<br>![Task 1.17](/Assets/Screenshots/Week1//Task1.17.png) |
-| **Mini Q1: Product Catalog**<br>• `Product` record with `Category` enum.<br>• Grouped 5 objects using LINQ `.GroupBy()`.<br>• **Done when:** Output is grouped correctly by category. | **Mini Q1**<br>![Q1](/Assets/Screenshots/Week1/Q1/q1.png) |
+| **Mini Q1: Product Catalog**<br>• `Product` record with `Category` enum.<br>• Grouped 5 objects using LINQ `.GroupBy()`.<br>• **Done when:** Output is grouped correctly by category. | **Mini Q1**<br>![Q1](/Assets/Screenshots/Week1/Q1/q1.png) | 
 | **Mini Q2: Temperature Converter**<br>• Handled value + unit using method overloading.<br>• **Done when:** All three units (C, F, K) convert correctly. | **Mini Q2**<br>![Q2](/Assets/Screenshots/Week1/Q2/q2.png) |
 | **Mini Q3: Contact Card**<br>• Array of 5 `ContactCard` structs.<br>• Case-insensitive search using `StringComparison.OrdinalIgnoreCase`.<br>• **Done when:** Lowercase query finds a differently-cased name. | **Mini Q3**<br>![Q3](/Assets/Screenshots/Week1/Q3/q3.png) |
 
@@ -89,3 +89,79 @@ The full C# language surface: types and how they live in memory, the conversion 
 5. Choose between `var` and `dynamic`, return and deconstruct tuples, and branch with pattern matching.
 6. Build classes with validated properties, value-equality records (`with`), and indexers.
 7. **Shipped:** Product Catalog, Temperature Converter, and Contact Card.
+
+# Week 2 — OOP, Delegates, Events, Generics & LINQ
+##  Objective
+Model a domain with proper OOP and query collections fluently — the two skills the Web API leans on hardest.
+
+### 📚 Syllabus Covered
+- **Module 3:** Encapsulation, inheritance, overriding, abstract classes, interfaces, polymorphism, method hiding (`new`), operator overloading.
+- **Module 4:** Delegates, events, lambdas, `Action`/`Func`/`Predicate`.
+- **Module 5:** Generics, `IEnumerable`/`yield`, LINQ (query & method syntax), extension methods, anonymous types.
+
+
+---
+
+## Section A — Learnings
+## Day 1 — Encapsulation, Inheritance, Overriding
+![](Assets/Screenshots/Week2/2026-07-08-14-09-10.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-13-04.png)
+
+## Day 2 — Abstract, Interfaces, Polymorphism, Hiding, Operators
+![](Assets/Screenshots/Week2/2026-07-08-14-22-51.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-27-29.png)
+
+
+### Module 3: OOP Pillars & Advanced Class Design
+This module solidified the four pillars of OOP through practical implementation. I learned to enforce invariants using encapsulation with private fields and validation logic, ensuring objects never enter invalid states. Multi-level inheritance was mastered through constructor chaining (`base(...)`), understanding how initialization flows from base to derived classes. The distinction between `virtual/override` and `sealed override` became clear when preventing further inheritance of specific behaviors. Abstract classes vs. interfaces were differentiated by their purpose: abstract classes define *what* something is (shared identity + partial implementation), while interfaces define *what* something can do (capabilities). Method hiding (`new`) versus overriding (`override`) was clarified through runtime polymorphism tests, showing how reference type determines which method executes. Operator overloading for custom types like `Money` demonstrated making domain objects behave naturally with standard operators.
+
+
+
+### Module 4: Delegates, Events & Functional Patterns
+Delegates were understood as type-safe function pointers enabling callback patterns without tight coupling. Multicast delegates showed how multiple subscribers can be invoked sequentially, forming the basis of event systems. Custom `EventArgs` classes taught me to pass contextual data through events while maintaining type safety. The `Action`, `Func`, and `Predicate` generic delegates replaced custom delegate declarations for common patterns, reducing boilerplate. Lambda expressions provided concise inline implementations for these delegates. The pub-sub pattern via events decoupled publishers from subscribers completely — the publisher knows nothing about who receives notifications, only that they conform to the event signature. This separation is foundational for building maintainable, testable systems.
+
+### Module 5: Generics, Iterators & LINQ
+Generics enabled writing reusable, type-safe collections and repositories without sacrificing compile-time checking. The `where T : class, new()` constraint pattern ensures only reference types with parameterless constructors can use certain functionality. Lazy evaluation through `yield return` transformed how I think about iteration — sequences are computed on-demand rather than materialized upfront, critical for memory efficiency with large datasets. LINQ's dual syntax (query expression vs. method chain) offers flexibility: query syntax reads like SQL for complex joins/grouping, while method syntax integrates seamlessly with C# code and supports dynamic composition. Extension methods allow adding functionality to existing types without modification, adhering to the Open/Closed Principle. Anonymous types provide lightweight projections for intermediate transformations, though their scope limitation (cannot be returned from methods) requires planning for DTOs or records when data must cross boundaries.
+
+---
+
+## Section B — Doables
+
+| Task | Done When Outcome | Evidence |
+|------|-------------------|----------|
+| **2.1 BankAccount** | Overdraw rejected; history logs every operation including failures | *(Code committed to repo)* |
+| **2.2 Vehicle Inheritance** | Constructor chain runs top-to-bottom; each override prints own info | *(Code committed to repo)* |
+| **2.3 Sealed Override** | Compile error captured when attempting to override sealed method | *(Code committed to repo)* |
+| **2.4 Abstract Shape** | Circle/Rectangle compute area; `new Shape()` instantiation error shown | *(Code committed to repo)* |
+| **2.5 Multiple Interfaces** | Single class implements both `IShape` and `IDrawable` without conflict | *(Code committed to repo)* |
+| **2.6 Overloading & Hiding** | Runtime polymorphism picks correct area; `new` vs `override` behavior documented | *(Code committed to repo)* |
+| **2.7 Money Operators** | Mismatched currency addition throws; comparisons return correct results | *(Code committed to repo)* |
+| **2.8 MathOperation Delegate** | Multicast invokes both methods; `Func` version matches output | *(Code committed to repo)* |
+| **2.9 AlarmClock Event** | Triggering alarm notifies Person AND CoffeeMachine with exact time | *(Code committed to repo)* |
+| **2.10 Action/Func/Predicate Pipeline** | Filter evens → square → print produces expected sequence | *(Code committed to repo)* |
+| **2.11 Generic Repository<T>** | Same repo works for Student and Product; constraint rationale explained | *(Code committed to repo)* |
+| **2.12 Lazy Iteration (yield)** | Iterator consumed lazily in foreach; not materialized upfront | *(Code committed to repo)* |
+| **2.13 LINQ Dual Syntax** | Every query written in BOTH query AND method syntax with identical results | *(Code committed to repo)* |
+| **2.14 Extensions & Anonymous Types** | All three extensions pass; anonymous type return limitation explained | *(Code committed to repo)* |
+| **Mini Q4: Employee Payroll** | Total payroll correct; per-department grouping prints accurately | *(Code committed to repo)* |
+| **Mini Q5: Notification Engine** | Sending notification fires event; logs from all subscribers appear | *(Code committed to repo)* |
+| **Mini Q6: Library Management** | All four LINQ queries return verified correct results | *(Code committed to repo)* |
+
+---
+
+## 💡 Key Learning Note: LINQ Query That Took Most Tries
+
+**Task 2.13 – GroupBy Department with Count + Average Salary**
+
+The most challenging query was grouping employees by department while calculating both count and average salary, then projecting to an anonymous type. Initially, I tried to access `g.Average()` inside the select clause without properly scoping the group variable.
+
+**Query Syntax:**
+```csharp
+var deptStats = from emp in employees
+                group emp by emp.Department into g
+                select new 
+                {
+                    Department = g.Key,
+                    Count = g.Count(),
+                    AvgSalary = g.Average(e => e.Salary)
+                };
