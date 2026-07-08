@@ -111,6 +111,10 @@ Model a domain with proper OOP and query collections fluently — the two skills
 ![](Assets/Screenshots/Week2/2026-07-08-14-22-51.png)
 ![](Assets/Screenshots/Week2/2026-07-08-14-27-29.png)
 
+## Days 3 - 
+![](Assets/Screenshots/Week2/2026-07-08-14-32-27.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-33-28.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-33-54.png)
 
 ### Module 3: OOP Pillars & Advanced Class Design
 This module solidified the four pillars of OOP through practical implementation. I learned to enforce invariants using encapsulation with private fields and validation logic, ensuring objects never enter invalid states. Multi-level inheritance was mastered through constructor chaining (`base(...)`), understanding how initialization flows from base to derived classes. The distinction between `virtual/override` and `sealed override` became clear when preventing further inheritance of specific behaviors. Abstract classes vs. interfaces were differentiated by their purpose: abstract classes define *what* something is (shared identity + partial implementation), while interfaces define *what* something can do (capabilities). Method hiding (`new`) versus overriding (`override`) was clarified through runtime polymorphism tests, showing how reference type determines which method executes. Operator overloading for custom types like `Money` demonstrated making domain objects behave naturally with standard operators.
