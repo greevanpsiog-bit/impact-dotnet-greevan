@@ -121,56 +121,9 @@ Model a domain with proper OOP and query collections fluently — the two skills
 ![](Assets/Screenshots/Week2/2026-07-08-14-39-19.png)
 ![](Assets/Screenshots/Week2/2026-07-08-14-39-56.png)
 
-### Module 3: OOP Pillars & Advanced Class Design
-This module solidified the four pillars of OOP through practical implementation. I learned to enforce invariants using encapsulation with private fields and validation logic, ensuring objects never enter invalid states. Multi-level inheritance was mastered through constructor chaining (`base(...)`), understanding how initialization flows from base to derived classes. The distinction between `virtual/override` and `sealed override` became clear when preventing further inheritance of specific behaviors. Abstract classes vs. interfaces were differentiated by their purpose: abstract classes define *what* something is (shared identity + partial implementation), while interfaces define *what* something can do (capabilities). Method hiding (`new`) versus overriding (`override`) was clarified through runtime polymorphism tests, showing how reference type determines which method executes. Operator overloading for custom types like `Money` demonstrated making domain objects behave naturally with standard operators.
 
-
-
-### Module 4: Delegates, Events & Functional Patterns
-Delegates were understood as type-safe function pointers enabling callback patterns without tight coupling. Multicast delegates showed how multiple subscribers can be invoked sequentially, forming the basis of event systems. Custom `EventArgs` classes taught me to pass contextual data through events while maintaining type safety. The `Action`, `Func`, and `Predicate` generic delegates replaced custom delegate declarations for common patterns, reducing boilerplate. Lambda expressions provided concise inline implementations for these delegates. The pub-sub pattern via events decoupled publishers from subscribers completely — the publisher knows nothing about who receives notifications, only that they conform to the event signature. This separation is foundational for building maintainable, testable systems.
-
-### Module 5: Generics, Iterators & LINQ
-Generics enabled writing reusable, type-safe collections and repositories without sacrificing compile-time checking. The `where T : class, new()` constraint pattern ensures only reference types with parameterless constructors can use certain functionality. Lazy evaluation through `yield return` transformed how I think about iteration — sequences are computed on-demand rather than materialized upfront, critical for memory efficiency with large datasets. LINQ's dual syntax (query expression vs. method chain) offers flexibility: query syntax reads like SQL for complex joins/grouping, while method syntax integrates seamlessly with C# code and supports dynamic composition. Extension methods allow adding functionality to existing types without modification, adhering to the Open/Closed Principle. Anonymous types provide lightweight projections for intermediate transformations, though their scope limitation (cannot be returned from methods) requires planning for DTOs or records when data must cross boundaries.
-
----
-
-## Section B — Doables
-
-| Task | Done When Outcome | Evidence |
-|------|-------------------|----------|
-| **2.1 BankAccount** | Overdraw rejected; history logs every operation including failures | *(Code committed to repo)* |
-| **2.2 Vehicle Inheritance** | Constructor chain runs top-to-bottom; each override prints own info | *(Code committed to repo)* |
-| **2.3 Sealed Override** | Compile error captured when attempting to override sealed method | *(Code committed to repo)* |
-| **2.4 Abstract Shape** | Circle/Rectangle compute area; `new Shape()` instantiation error shown | *(Code committed to repo)* |
-| **2.5 Multiple Interfaces** | Single class implements both `IShape` and `IDrawable` without conflict | *(Code committed to repo)* |
-| **2.6 Overloading & Hiding** | Runtime polymorphism picks correct area; `new` vs `override` behavior documented | *(Code committed to repo)* |
-| **2.7 Money Operators** | Mismatched currency addition throws; comparisons return correct results | *(Code committed to repo)* |
-| **2.8 MathOperation Delegate** | Multicast invokes both methods; `Func` version matches output | *(Code committed to repo)* |
-| **2.9 AlarmClock Event** | Triggering alarm notifies Person AND CoffeeMachine with exact time | *(Code committed to repo)* |
-| **2.10 Action/Func/Predicate Pipeline** | Filter evens → square → print produces expected sequence | *(Code committed to repo)* |
-| **2.11 Generic Repository<T>** | Same repo works for Student and Product; constraint rationale explained | *(Code committed to repo)* |
-| **2.12 Lazy Iteration (yield)** | Iterator consumed lazily in foreach; not materialized upfront | *(Code committed to repo)* |
-| **2.13 LINQ Dual Syntax** | Every query written in BOTH query AND method syntax with identical results | *(Code committed to repo)* |
-| **2.14 Extensions & Anonymous Types** | All three extensions pass; anonymous type return limitation explained | *(Code committed to repo)* |
-| **Mini Q4: Employee Payroll** | Total payroll correct; per-department grouping prints accurately | *(Code committed to repo)* |
-| **Mini Q5: Notification Engine** | Sending notification fires event; logs from all subscribers appear | *(Code committed to repo)* |
-| **Mini Q6: Library Management** | All four LINQ queries return verified correct results | *(Code committed to repo)* |
-
----
-
-## 💡 Key Learning Note: LINQ Query That Took Most Tries
-
-**Task 2.13 – GroupBy Department with Count + Average Salary**
-
-The most challenging query was grouping employees by department while calculating both count and average salary, then projecting to an anonymous type. Initially, I tried to access `g.Average()` inside the select clause without properly scoping the group variable.
-
-**Query Syntax:**
-```csharp
-var deptStats = from emp in employees
-                group emp by emp.Department into g
-                select new 
-                {
-                    Department = g.Key,
-                    Count = g.Count(),
-                    AvgSalary = g.Average(e => e.Salary)
-                };
+## Day 5 -
+![](Assets/Screenshots/Week2/2026-07-08-14-48-50.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-49-15.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-49-39.png)
+![](Assets/Screenshots/Week2/2026-07-08-14-50-05.png)
